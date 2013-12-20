@@ -1,0 +1,14 @@
+<h3>{{message}}</h3>
+
+<input type='text' ng-model='newTodo'/>
+<button ng-click='addTodo()'>Add Todo</button>
+
+<hr/>
+
+<ul>
+    <li ng-repeat='todo in todos'>
+      <div todo='todo' on-remove='remove()' index='{{$index}}'></div>
+    </li>
+</ul>
+
+

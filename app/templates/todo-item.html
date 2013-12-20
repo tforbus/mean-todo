@@ -1,0 +1,6 @@
+<span ng-class='{"todo-done": item.isDone}' id='{{item._id}}'>
+  {{item.description}}
+</span>
+
+<button ng-click='markDone()'>Done!</button>
+<button ng-click='remove()'>Remove</button>
