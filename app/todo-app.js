@@ -1,7 +1,6 @@
 // Initializing modules to inject into the application.
 angular.module('Todo.Controllers', []);
 angular.module('Todo.Directives', []);
-angular.module('Todo.Services', []);
 angular.module('Todo.Resources', ['ngResource']);
 
 // Initializing the application with a dependency on routes and other modules.
@@ -9,7 +8,6 @@ angular.module('Todo', [
   'ngRoute',
   'Todo.Controllers',
   'Todo.Directives',
-  'Todo.Services',
   'Todo.Resources'
 ]);
 
