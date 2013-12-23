@@ -3,18 +3,17 @@ angular.module('Todo.Controllers').controller('IndexCtrl',
     function ($scope, TodoItems, injectedItems) {
 
   $scope.message = 'Hey, here\'s the stuff you need to do!';
-  $scope.newTodo = '';
+  $scope.newTodo = {
+      description : '',
+      isDone : false
+  };
   $scope.todos = injectedItems;
 
 
   $scope.addTodo = function() {
-    var item = {
-      description: $scope.newTodo,
-      isDone: false
-    };
-    var dbItem = TodoItems.save({}, item);
+    var dbItem = TodoItems.save({}, $scope.newTodo);
     $scope.todos.push(dbItem);
-    $scope.newTodo = '';
+    $scope.newTodo = {};
   };
 
 
