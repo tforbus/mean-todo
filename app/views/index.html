@@ -7,7 +7,7 @@
 
 <ul>
     <li ng-repeat='todo in todos'>
-      <div todo='todo' on-remove='remove()' index='{{$index}}'></div>
+      <div todo='todo' on-remove='remove($index)'></div>
     </li>
 </ul>
 

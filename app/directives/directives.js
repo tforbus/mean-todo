@@ -23,7 +23,6 @@ angular.module('Todo.Directives')
     scope: {
       item: '=todo',
       onRemove: '&',
-      index: '@'
     },
 
     // Directives can have their own controllers so you don't have to 
@@ -38,7 +37,7 @@ angular.module('Todo.Directives')
       // button, call the function handed down to the directive (onRemove), 
       // and then do some other stuff.
       $scope.remove = function() {
-        $scope.onRemove($scope.index);
+        $scope.onRemove();
         TodoItems.delete({id: $scope.item._id}, $scope.item);
       };
     },
