@@ -4,7 +4,7 @@ angular.module('Todo.Controllers').controller('IndexCtrl',
 
   $scope.message = 'Hey, here\'s the stuff you need to do!';
   $scope.newTodo = {
-      descroption : '',
+      description : '',
       isDone : false
   };
   $scope.todos = injectedItems;
