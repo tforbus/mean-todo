@@ -8,6 +8,7 @@ Normally you probably wouldn't write such a small app this way.
 
 ## To run
 ```
+mongod &
 npm install
 node app
 ```
