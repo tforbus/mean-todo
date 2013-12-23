@@ -5,7 +5,7 @@ angular.module('Todo.Resources', ['ngResource']);
 
 // Initializing the application with a dependency on routes and other modules.
 angular.module('Todo', [
-  'ngRoute',
+  'ui.router',
   'Todo.Controllers',
   'Todo.Directives',
   'Todo.Resources'
@@ -13,16 +13,22 @@ angular.module('Todo', [
 
 // This array syntax is so Angular can deal with minification.
 // Angular uses dependency injection, so the variable names actually matter.
-angular.module('Todo').config(['$routeProvider', function ($routeProvider) {
-  $routeProvider
 
-    // Angular routes are separate from Express routes.
-    .when('/', {
+// Using the UI-Router over the traditional Angular router gives you some nice 
+// features. Now it's easy to have nested views, and you can reference URLs by 
+// their name rather than needing to memorize the path for every route.
+//
+// github.com/angular-ui/ui-router
+angular.module('Todo').config(['$stateProvider', '$urlRouterProvider', 
+    function ($stateProvider, $urlRouterProvider) {
+  $urlRouterProvider.otherwise('/error');
+
+  $stateProvider
+
+    .state('index', {
+      url: '/',
       templateUrl: '/app/views/index.html',
       controller: 'IndexCtrl',
-
-      // We can get all the todo items BEFORE the page loads.
-      // You still have to inject the values into the controller.
       resolve: {
         injectedItems: function (TodoItems) {
           return TodoItems.query();

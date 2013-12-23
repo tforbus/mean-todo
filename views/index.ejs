@@ -14,6 +14,9 @@
     <script type='text/javascript'
       src='/vendor/angular-resource.min.js'></script>
 
+    <script type='text/javascript'
+      src='/vendor/angular-ui-router.min.js'></script>
+
 
     <!-- Todo App -->
     <script type='text/javascript'
@@ -35,8 +38,9 @@
   <!-- Specify the app that we're going to use -->
   <body ng-app='Todo'>
 
-    <!-- The Angular partials load here -->
-    <div ng-view></div>
+    <!-- The Angular partials load here. ui-view replaces ng-view 
+    when you use ui-router.  -->
+    <div ui-view></div>
 
   </body>
 </html>
