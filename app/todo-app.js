@@ -34,5 +34,22 @@ angular.module('Todo').config(['$stateProvider', '$urlRouterProvider',
           return TodoItems.query();
         }
       }
+    })
+
+    // You can link to this page by referencing the first parameter 
+    // of the state. <a ui-sref='account'>Your Account</a>
+    // Now you don't need to memorize routes.
+    .state('account', {
+      url: '/account',
+      templateUrl: '/app/views/account.html',
+      controller: 'AccountCtrl'
+    })
+
+    // For more information about this, check out this video:
+    // egghead.io/lessons/angularjs-introduction-ui-router
+    .state('account.details', {
+      url: '/account/details',
+      templateUrl: '/app/views/account-details.html',
+      controller: 'AccountCtrl'
     });
 }]);

@@ -28,6 +28,9 @@
       src='/app/controllers/IndexCtrl.js'></script>
 
     <script type='text/javascript'
+      src='/app/controllers/AccountCtrl.js'></script>
+
+    <script type='text/javascript'
       src='/app/directives/directives.js'></script>
 
     <script type='text/javascript'
@@ -38,6 +41,8 @@
   <!-- Specify the app that we're going to use -->
   <body ng-app='Todo'>
 
+    <a ui-sref='index'>index</a> - 
+    <a ui-sref='account'>account</a>
     <!-- The Angular partials load here. ui-view replaces ng-view 
     when you use ui-router.  -->
     <div ui-view></div>
